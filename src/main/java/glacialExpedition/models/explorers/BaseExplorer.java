@@ -3,6 +3,8 @@ package glacialExpedition.models.explorers;
 import glacialExpedition.common.ExceptionMessages;
 import glacialExpedition.models.suitcases.Suitcase;
 
+import java.util.ArrayList;
+
 import static glacialExpedition.common.ExceptionMessages.EXPLORER_ENERGY_LESS_THAN_ZERO;
 import static glacialExpedition.common.ExceptionMessages.EXPLORER_NAME_NULL_OR_EMPTY;
 
@@ -49,7 +51,7 @@ public abstract class BaseExplorer implements Explorer{
 
     @Override
     public Suitcase getSuitcase() {
-        return null;
+        return this.suitcase;
     }
 
 

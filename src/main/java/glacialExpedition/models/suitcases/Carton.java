@@ -9,7 +9,7 @@ public class Carton implements Suitcase{
     private Collection<String> exhibits;
 
     public Carton() {
-        this.exhibits = new ArrayList<>();
+        this.exhibits = new ArrayList<String>();
     }
 
     @Override
