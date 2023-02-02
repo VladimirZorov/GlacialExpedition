@@ -1,6 +1,7 @@
 package glacialExpedition.models.explorers;
 
 import glacialExpedition.common.ExceptionMessages;
+import glacialExpedition.models.suitcases.Carton;
 import glacialExpedition.models.suitcases.Suitcase;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public abstract class BaseExplorer implements Explorer{
     public BaseExplorer(String name, double energy) {
         this.setName(name);
         this.setEnergy(energy);
-        this.suitcase = suitcase;
+        this.suitcase = new Carton();
     }
 
     public void setName(String name) {
@@ -46,13 +47,16 @@ public abstract class BaseExplorer implements Explorer{
 
     @Override
     public boolean canSearch() {
-        return this.energy>0;
+        if (this.energy > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public Suitcase getSuitcase() {
         return this.suitcase;
     }
-
 
 }
