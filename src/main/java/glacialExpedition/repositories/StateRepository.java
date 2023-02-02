@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class StateRepository implements Repository{
+public class StateRepository implements Repository<State>{
 
     private Collection<State> states;
 
@@ -21,17 +21,17 @@ public class StateRepository implements Repository{
     }
 
     @Override
-    public void add(Object entity) {
+    public void add(State state) {
 
     }
 
     @Override
-    public boolean remove(Object entity) {
+    public boolean remove(State state) {
         return false;
     }
 
     @Override
-    public Object byName(String name) {
+    public State byName(String name) {
         return null;
     }
 }

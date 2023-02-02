@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class ExplorerRepository implements Repository{
+public class ExplorerRepository implements Repository<Explorer>{
 
     private Collection<Explorer> explorers;
 
@@ -20,17 +20,24 @@ public class ExplorerRepository implements Repository{
     }
 
     @Override
-    public void add(Object entity) {
+    public void add(Explorer explorer) {
 
     }
 
     @Override
-    public boolean remove(Object entity) {
+    public boolean remove(Explorer explorer) {
         return false;
     }
 
+
+
     @Override
-    public Object byName(String name) {
+    public Explorer byName(String name) {
+        for (Explorer explorer : explorers) {
+            if (explorer.getName().equals(name)) {
+                return  explorer;
+            }
+        }
         return null;
     }
 }
