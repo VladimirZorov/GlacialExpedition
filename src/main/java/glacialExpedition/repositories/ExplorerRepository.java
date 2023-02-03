@@ -21,11 +21,21 @@ public class ExplorerRepository implements Repository<Explorer>{
 
     @Override
     public void add(Explorer explorer) {
-
+        for (Explorer explorer1 : explorers) {
+            if (!explorer1.getName().equals(explorer.getName())){
+                explorers.add(explorer);
+            }
+        }
     }
 
     @Override
     public boolean remove(Explorer explorer) {
+        for (Explorer explorer1 : explorers) {
+            if (explorer1.equals(explorer)) {
+                explorers.remove(explorer);
+                return true;
+            }
+        }
         return false;
     }
 

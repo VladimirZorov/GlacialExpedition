@@ -22,16 +22,31 @@ public class StateRepository implements Repository<State>{
 
     @Override
     public void add(State state) {
-
+        for (State state1 : states) {
+            if (!state1.equals(state)) {
+                states.add(state);
+            }
+        }
     }
 
     @Override
     public boolean remove(State state) {
+        for (State state1 : states) {
+            if (state1.equals(state)) {
+                states.remove(state);
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public State byName(String name) {
+        for (State state : states) {
+         if (state.getName().equals(name)) {
+             return state;
+         }
+        }
         return null;
     }
 }
